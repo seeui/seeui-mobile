@@ -1,8 +1,8 @@
 {
   "name": "seeui-mobile",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A Modern UI Kit based on Preact",
-  "main": "./src/index.js",
+  "main": "./lib/index.js",
   "scripts": {
     "lint": "fecs src --type=js --reporter=baidu || true",
     "build": "rimraf lib && NODE_ENV=production gulp build",
