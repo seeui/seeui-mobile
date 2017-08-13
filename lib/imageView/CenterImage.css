@@ -1,0 +1,33 @@
+.cui-centerimage-loading,
+.cui-centerimage-error {
+  width: 100%;
+  height: 100%;
+  line-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: rgba(255,255,255,0.8);
+}
+.cui-centerimage-loading .cui-centerimage-error-icon,
+.cui-centerimage-error .cui-centerimage-error-icon,
+.cui-centerimage-loading .cui-centerimage-loading-icon,
+.cui-centerimage-error .cui-centerimage-loading-icon {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.cui-centerimage-loading .cui-centerimage-error-icon .cui-i-loading,
+.cui-centerimage-error .cui-centerimage-error-icon .cui-i-loading,
+.cui-centerimage-loading .cui-centerimage-loading-icon .cui-i-loading,
+.cui-centerimage-error .cui-centerimage-loading-icon .cui-i-loading {
+  font-size: 24px;
+}

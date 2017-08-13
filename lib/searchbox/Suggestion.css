@@ -1,0 +1,7 @@
+.cui-suggestion {
+  display: none;
+  background-color: #fff;
+}
+.cui-suggestion.show {
+  display: block;
+}

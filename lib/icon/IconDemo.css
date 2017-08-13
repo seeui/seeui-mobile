@@ -1,0 +1,19 @@
+.icon-wrap {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -o-box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  line-height: 40px;
+  text-align: center;
+  background-color: #f4f4f4;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.icon-wrap i {
+  font-size: 18px;
+}

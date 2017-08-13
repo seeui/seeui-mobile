@@ -1,0 +1,37 @@
+.cui-loadmore {
+  width: 65%;
+  margin: 1.5em auto;
+  line-height: 1.6em;
+  font-size: 14px;
+  text-align: center;
+  color: #999;
+}
+.cui-loadmore-tips {
+  display: inline-block;
+  vertical-align: middle;
+}
+.cui-loadmore-line {
+  border-top: 1px solid #e5e5e5;
+  margin-top: 2.4em;
+}
+.cui-loadmore-line .cui-tips {
+  position: relative;
+  top: -0.9em;
+  padding: 0 0.55em;
+  background-color: #fff;
+  color: #999;
+}
+.cui-loadmore-dot .cui-tips {
+  padding: 0 0.16em;
+}
+.cui-loadmore-dot .cui-tips:before {
+  content: " ";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #e5e5e5;
+  display: inline-block;
+  position: relative;
+  vertical-align: 0;
+  top: -0.16em;
+}

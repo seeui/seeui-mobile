@@ -1,0 +1,53 @@
+.cui-button {
+  text-align: center;
+  cursor: pointer;
+  border-width: 1px;
+  border-style: solid;
+  height: 38px;
+  padding: 0 10px;
+  font-size: 14px;
+  -webkit-appearance: none;
+  border-radius: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 100%;
+  outline: 0;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.cui-button.small {
+  width: auto;
+}
+.cui-button.primary {
+  color: #fff;
+  background-color: #38f;
+  border-color: #38f;
+}
+.cui-button.primary.disabled,
+.cui-button.primary.disabled:active {
+  background-color: #5ca0ff;
+  border-color: #5ca0ff;
+  cursor: not-allowed;
+  color: rgba(255,255,255,0.8);
+}
+.cui-button.primary:active {
+  background-color: #1476ff;
+  border-color: #1476ff;
+}
+.cui-button.default {
+  color: #333;
+  background-color: #f0f0f0;
+  border-color: #f0f0f0;
+}
+.cui-button.default.disabled,
+.cui-button.default.disabled:active {
+  background-color: #f3f3f3;
+  border-color: #f3f3f3;
+  cursor: not-allowed;
+  color: #aaa;
+}
+.cui-button.default:active {
+  background-color: #d8d8d8;
+  border-color: #d8d8d8;
+}

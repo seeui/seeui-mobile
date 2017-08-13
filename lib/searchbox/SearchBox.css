@@ -1,0 +1,69 @@
+.cui-searchbox {
+  background: #fff;
+  position: relative;
+}
+.cui-searchbox-wrap {
+  position: relative;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+}
+.cui-searchbox.inputing .cui-searchbox-delete,
+.cui-searchbox.inputing .cui-searchbox-btn {
+  display: block;
+}
+.cui-searchbox.inputing .cui-searchbox-input {
+  padding-right: 80px;
+}
+.cui-searchbox-i-search {
+  position: absolute;
+  top: 13px;
+  left: 10px;
+  width: 16px;
+  height: 16px;
+  color: #999;
+}
+.cui-searchbox-input {
+  color: #333;
+  padding-left: 33px;
+}
+.cui-searchbox-input::-webkit-input-placeholder {
+  color: #999;
+}
+.cui-searchbox-input::-webkit-search-cancel-button {
+  display: none;
+}
+.cui-searchbox-delete {
+  position: absolute;
+  top: 0;
+  right: 43px;
+  bottom: 0;
+  width: 30px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px !important;
+  color: rgba(0,0,0,0.5) !important;
+  display: none;
+}
+.cui-searchbox-delete:active {
+  color: rgba(0,0,0,0.6) !important;
+}
+.cui-searchbox-btn.default {
+  width: 45px;
+  height: 40px;
+  padding-right: 0;
+  outline: none;
+  display: none;
+  background-color: #fff;
+  border: 0;
+  color: #999;
+}
+.cui-searchbox-btn.default:active {
+  background-color: #fff;
+  border-color: #fff;
+  border-left-color: #d1d9e4;
+  color: #38f;
+}

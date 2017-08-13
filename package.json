@@ -2,10 +2,10 @@
   "name": "seeui-mobile",
   "version": "1.0.0",
   "description": "A Modern UI Kit based on Preact",
-  "main": "./lib/index.js",
+  "main": "./src/index.js",
   "scripts": {
     "lint": "fecs src --type=js --reporter=baidu || true",
-    "build": "cross-env NODE_ENV=production webpack --config ./tool/webpack.build.babel.js",
+    "build": "rimraf lib && NODE_ENV=production gulp build",
     "start": "npm run lint && webpack-dev-server --config ./tool/webpack.dev.babel.js --devtool eval --progress --inline --colors --hot --content-base dist"
   },
   "repository": {
@@ -33,6 +33,7 @@
     "cross-env": "^5.0.0",
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^2.1.0",
+    "fetch-jsonp": "^1.1.1",
     "file-loader": "^0.11.1",
     "gulp": "^3.9.1",
     "gulp-remove-lines": "^0.1.0",
@@ -43,14 +44,14 @@
     "markdown-loader": "^2.0.0",
     "nib": "^1.1.2",
     "optimize-css-assets-webpack-plugin": "^2.0.0",
+    "rimraf": "^2.6.1",
     "style-loader": "^0.18.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "url-loader": "^0.5.8",
     "webpack": "^2.5.1",
     "webpack-dev-server": "^2.4.5",
-    "webpack-merge": "^4.1.0",
-    "fetch-jsonp": "^1.1.1"
+    "webpack-merge": "^4.1.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",

@@ -1,0 +1,70 @@
+.cui-dialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.6);
+  display: none;
+}
+.cui-dialog.show {
+  display: block;
+}
+.cui-dialog-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #fff;
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  padding: 10px;
+}
+.cui-dialog-wrap.vertical-middle {
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.cui-dialog-header {
+  margin: 0;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+}
+.cui-dialog-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 36px;
+  font-size: 22px;
+  color: #999;
+  cursor: pointer;
+}
+.cui-dialog-body {
+  padding: 20px 0;
+}
+.cui-dialog-footer {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+}
+.cui-dialog-footer-item {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  line-height: 1;
+}

@@ -1,0 +1,17 @@
+.imageview-demo ul {
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.imageview-demo ul li {
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin-right: 5px;
+}
+.imageview-demo ul li .pic {
+  width: 100px;
+  height: 100px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}

@@ -1,0 +1,10 @@
+.cui-rate {
+  display: inline-block;
+}
+.cui-rate .cui-icon {
+  color: #d2d2d2;
+  margin-right: 5px;
+}
+.cui-rate .rate-active .cui-icon {
+  color: #ff8502;
+}

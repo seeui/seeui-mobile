@@ -1,0 +1,66 @@
+.cui-carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.cui-carousel-content {
+  width: 100%;
+}
+.cui-carousel-list {
+  display: -webkit-box;
+  list-style-type: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+.cui-carousel-item {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+.cui-carousel-dots {
+  width: 100%;
+  height: 10px;
+  line-height: 8px;
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+.cui-carousel-dot {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin: 0 3px;
+}
+.cui-carousel-dot.current {
+  background-color: #ff8503;
+}
+.cui-carousel.is-card {
+  padding-bottom: 20px;
+}
+.cui-carousel.is-card .cui-carousel-dots {
+  bottom: 5px;
+}
