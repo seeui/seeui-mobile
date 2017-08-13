@@ -159,7 +159,7 @@ export default class InfiniteLoader extends Component {
             });
 
             this.props.onLoadMore(this.resolveLoading, this.finish);
-        }, 30)
+        }, 30);
     }
 
     render() {

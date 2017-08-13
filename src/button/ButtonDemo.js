@@ -4,7 +4,7 @@
  * @data 2017-07-05
  */
 
-import {h, Component, render} from 'preact';
+import {h, Component} from 'preact';
 import {Button} from '../index';
 
 export default class ButtonDemo extends Component {

@@ -6,7 +6,7 @@
 
 import {h, Component, cloneElement} from 'preact';
 import classNames from 'classnames';
-import {getStyle, setStyle, query, queryAll} from '../util/dom';
+import {setStyle, query, queryAll} from '../util/dom';
 import Tab from './Tab';
 
 import './Tabs.styl';
@@ -195,7 +195,7 @@ export default class Tabs extends Component {
         const inkBarCls = classNames({
             [`${prefixCls}-tabs-ink-bar`]: true,
             [`${prefixCls}-tabs-ink-bar-animated`]: this.state.hasAnimate
-        })
+        });
 
         return (
             <div className={cls} ref={node => this.main = node}>
@@ -217,5 +217,4 @@ export default class Tabs extends Component {
             </div>
         );
     }
-
 }

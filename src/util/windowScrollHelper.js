@@ -88,7 +88,7 @@ function setWrapperPostion(wrapper) {
         return;
     }
 
-    wrapper.scrollTop = originalHTMLBodySize['body'].scrollTop;
+    wrapper.scrollTop = originalHTMLBodySize.body.scrollTop;
 }
 
 /**

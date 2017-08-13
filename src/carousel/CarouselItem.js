@@ -10,7 +10,7 @@ import classNames from 'classnames';
 export default class CarouselItem extends Component {
 
     static defaultProps = {
-        prefixCls: 'cui',
+        prefixCls: 'cui'
     }
 
     render() {

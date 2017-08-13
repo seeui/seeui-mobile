@@ -100,7 +100,7 @@ export default class Confirm extends Component {
                     ...defaultButton,
                     button,
                     onClick: () => this.clickHandler(button)
-                }
+                };
             });
         }
         else {

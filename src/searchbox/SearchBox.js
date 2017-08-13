@@ -134,7 +134,7 @@ export default class SearchBox extends Component {
     sugClickHandle(value) {
         this.setState({
             value,
-            show: false,
+            show: false
         });
 
         this.value = value;
@@ -157,7 +157,7 @@ export default class SearchBox extends Component {
 
         const cls = classNames({
             [`${prefixCls}-searchbox`]: true,
-            'inputing': show,
+            inputing: show,
             [className]: className
         });
 

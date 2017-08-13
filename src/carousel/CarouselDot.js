@@ -26,7 +26,7 @@ export default class CarouselDot extends Component {
         for (let i = 0; i < all; i++) {
             const dotCls = classNames({
                 [`${prefixCls}-carousel-dot`]: true,
-                'current': current === i
+                current: current === i
             });
 
             dots.push(

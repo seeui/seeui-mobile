@@ -26,7 +26,8 @@ export default class SearchBoxDemo extends Component {
      * 渲染sug内容
      *
      * @private
-     * @return {Array}
+     * @param {Function} resolve Suggestion 从展示恢复到收起的方法
+     * @return {Array} Suggestion 列表
      */
     renderSugContent(resolve) {
         const suggestionList = this.state.sugList;

@@ -30,7 +30,6 @@ export default class Uploader extends Component {
 
     handleFile(file, cb) {
         let reader = new FileReader();
-        console.log(file);
 
         reader.onload = e => {
             let img = new Image();
@@ -80,7 +79,7 @@ export default class Uploader extends Component {
     }
 
     renderFiles() {
-        return this.props.files.map((file, idx)=>{
+        return this.props.files.map((file, idx) => {
             let {url, error, status, onClick, ...others} = file;
             let fileStyle = {
                 backgroundImage: `url(${url})`
@@ -92,17 +91,19 @@ export default class Uploader extends Component {
             });
 
             let handleFileClick = onClick ? onClick : e => {
-                if (this.props.onFileClick) this.props.onFileClick(e, file, idx);
+                if (this.props.onFileClick) {
+                    this.props.onFileClick(e, file, idx);
+                }
             };
 
             return (
                 <li className={cls} key={idx} style={fileStyle} onClick={handleFileClick} {...others}>
                     {
-                        error || status ?
-                        <div className={`${prefixCls}-uploader-file-content`}>
-                            { error ? <Icon type="warn-fill" /> : status }
-                        </div>
-                        : false
+                        error || status ? (
+                            <div className={`${prefixCls}-uploader-file-content`}>
+                                { error ? <Icon type="warn-fill" /> : status }
+                            </div>
+                        ) : false
                     }
                 </li>
             );
@@ -134,7 +135,7 @@ export default class Uploader extends Component {
     }
 
     render() {
-        const {prefixCls, title, maxCount, files, onChange, onFileClick, className, ...others} = this.props;
+        const {prefixCls, title, maxCount, files, onChange, className, ...others} = this.props;
         const inputProps = Object.assign({}, others);
         delete inputProps.lang;
         delete inputProps.onError;
