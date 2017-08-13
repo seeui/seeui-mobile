@@ -1,0 +1,45 @@
+@require '../css/base'
+
+.{$-cui-class-prefix}-carousel
+    width: 100%
+    overflow: hidden
+    position: relative
+
+    &-content
+        width: 100%
+
+    &-list
+        display: -webkit-box
+        list-style-type: none
+        user-select: none
+        -webkit-touch-callout: none
+
+    &-item
+        display: flex
+        justify-content: center;
+        align-items: center;
+        width: 100%
+        text-align: center
+        position: relative
+
+    &-dots
+        size: 100% 10px
+        line-height: 8px
+        absolute: bottom 10px
+        text-align: center
+        vertical-align: middle
+
+    &-dot
+        size: 8px
+        display: inline-block
+        border-radius: 50%
+        background-color: #ccc
+        margin: 0 3px
+
+        &.current
+            background-color: $-cui-sub-color
+
+    &.is-card
+        padding-bottom: 20px
+        .{$-cui-class-prefix}-carousel-dots
+            bottom: 5px

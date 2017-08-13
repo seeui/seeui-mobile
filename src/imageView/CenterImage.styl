@@ -1,0 +1,19 @@
+@require '../css/base'
+
+.{$-cui-class-prefix}-centerimage-loading,
+.{$-cui-class-prefix}-centerimage-error
+    size: 100%
+    line-height: 100%
+    absolute: top left right bottom
+    color: rgba(255, 255, 255, .8)
+
+
+    .{$-cui-class-prefix}-centerimage-error-icon,
+    .{$-cui-class-prefix}-centerimage-loading-icon
+        width: 100%
+        text-align: center
+        absolute: top 45% left 50%
+        transform: translate(-50%, -50%)
+
+        .{$-cui-class-prefix}-i-loading
+            font-size: 24px

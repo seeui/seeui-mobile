@@ -1,0 +1,59 @@
+@require '../css/base'
+
+.{$-cui-class-prefix}-imageview
+    animation: cui-ease-show time ease
+    fixed: top right bottom left
+    size: 100%
+    z-index: 900
+    background-color: #000
+    overflow: hidden
+
+    &-pager
+        fixed: left 50% bottom 10px
+        font-size: 20px
+        color: #fff
+        padding: 2px 5px
+        user-select: none
+        transform: translateX(-50%)
+        -webkit-touch-callout: none
+
+    &-delete
+        size: 46px
+        line-height: 46px
+        text-align: center
+        fixed: right bottom
+        color: #fff
+        user-select: none
+        -webkit-touch-callout: none
+
+        i
+            font-size: 20px
+
+    &-list
+        display: -webkit-box
+        height: 100%
+        list-style-type: none
+        user-select: none
+        -webkit-touch-callout: none
+
+    &-item
+        display: flex
+        justify-content: center;
+        align-items: center;
+        size: 100%
+        text-align: center
+        position: relative
+        background-color: #000
+        overflow-y: scroll
+
+    &-img
+        absolute: top left
+        max-width: 100%
+        user-select: none
+        -webkit-touch-callout: none
+
+@keyframes cui-ease-show
+    from
+        opacity: 0
+    to
+        opacity: 1

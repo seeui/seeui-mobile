@@ -1,0 +1,79 @@
+@require '../css/base'
+
+.{$-cui-class-prefix}-uploader
+    &-header
+        display: flex
+        padding-bottom: 10px
+
+    &-title
+        flex: 1
+
+    &-info
+        color: #ccc
+
+    &-body
+        margin-bottom: -4px
+        margin-right: -9px
+        overflow: hidden
+
+    &-files
+        list-style: none
+
+    &-file
+        float: left
+        margin-right: 9px
+        margin-bottom: 9px
+        size: 79px
+        background: no-repeat 50%
+        background-size: cover
+
+    &-file-status
+        position: relative
+
+        &:before
+            absolute: top right bottom left
+            content: " "
+            background-color: rgba(0, 0, 0, .5)
+
+    &-file-content
+        absolute: top 50% left 50%
+        transform: translate(-50%, -50%)
+        color: #fff
+
+        .{$-cui-class-prefix}-i-warn-fill
+            color: #f43530
+            font-size: 24px
+
+
+    &-box
+        float: left
+        position: relative
+        margin-right: 9px
+        margin-bottom: 9px
+        size: 77px
+        border: 1px solid #d9d9d9
+
+        &:before,
+        &:after
+            content: " ";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+            background-color: #d9d9d9;
+
+        &:before
+            size: 2px 39.5px
+
+        &:after
+            size: 39.5px 2px
+
+    &-input
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+        absolute: top 0 left 0
+        z-index: 1
+        size: 100%
+        opacity: 0
+
+

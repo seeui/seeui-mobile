@@ -1,0 +1,51 @@
+@require '../css/base'
+
+.{$-cui-class-prefix}-button
+    text-align: center
+    cursor: pointer
+    border-width: 1px
+    border-style: solid
+    height: 38px
+    padding: 0 10px
+    font-size: 14px
+    -webkit-appearance: none
+    border-radius: 0
+    user-select: none
+    width: 100%
+    outline: 0
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+
+    &.small
+        width: auto
+
+    &.primary
+        color: #fff
+        background-color: $-cui-main-color
+        border-color: $-cui-main-color
+
+        &.disabled,
+        &.disabled:active
+            background-color: $-cui-main-color-lighter
+            border-color: $-cui-main-color-lighter
+            cursor: not-allowed
+            color: rgba(255, 255, 255, .8)
+
+        &:active
+            background-color: $-cui-main-color-dark
+            border-color: $-cui-main-color-dark
+
+    &.default
+        color: #333
+        background-color: #f0f0f0
+        border-color: #f0f0f0
+
+        &.disabled,
+        &.disabled:active
+            background-color: lighten(#f0f0f0, 20%)
+            border-color: lighten(#f0f0f0, 20%)
+            cursor: not-allowed
+            color: #aaa
+
+        &:active
+            background-color: darken(#f0f0f0, 10%)
+            border-color: darken(#f0f0f0, 10%)

@@ -1,0 +1,118 @@
+@require '../css/base'
+
+
+.{$-cui-class-prefix}-tabs
+    box-sizing: border-box
+    position: relative
+    overflow: hidden
+    clearfix()
+    color: #495060
+
+    &-bar
+        border-bottom: 1px solid #dddee1
+        outline: none
+
+    &-ink-bar
+        z-index: 1
+        position: absolute
+        left: 0
+        bottom: 1px
+        box-sizing: border-box
+        height: 2px
+        background-color: #2d8cf0
+        transform-origin: 0 0
+
+    &-ink-bar-animated
+        transition: transform .3s ease-in-out, width .3s ease-in-out
+
+    &-nav-container
+        overflow: hidden
+        font-size: 14px
+        line-height: 1.5
+        box-sizing: border-box
+        position: relative
+        white-space: nowrap
+        margin-bottom: -1px
+        clearfix()
+
+        &-scrolling
+          padding-left: 32px
+          padding-right: 32px
+
+    &-nav-wrap
+        overflow: hidden
+        margin-bottom: -1px
+
+
+    &-nav-scroll
+      overflow: hidden
+      white-space: nowrap
+
+
+    &-nav
+        box-sizing: border-box
+        padding-left: 0
+        transition: transform 0.5s ease-in-out
+        position: relative
+        margin: 0
+        list-style: none
+        float: left
+
+        &:before,
+        &:after
+            display: table
+            content: " "
+
+        &:after
+            clear: both
+
+        .{$-cui-class-prefix}-tabs-tab-disabled
+            pointer-events: none
+            cursor: default
+            color: #ccc;
+
+        .{$-cui-class-prefix}-tabs-tab-txt
+            display: inline-block
+
+
+        .{$-cui-class-prefix}-tabs-tab
+            display: inline-block
+            height: 100%
+            box-sizing: border-box
+            position: relative
+            padding: 8px 20px
+            transition: color .1s
+            cursor: pointer
+            text-decoration: none
+            color: #495060
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+
+            &:active
+                color: #000
+
+            // .@{iconfont-css-prefix}
+            //     width: 14px
+            //     height: 14px
+            //     margin-right: 8px
+
+
+        .{$-cui-class-prefix}-tabs-tab-active
+            color: #2d8cf0
+
+.{$-cui-class-prefix}-tabs-width-all
+
+    .{$-cui-class-prefix}-tabs-nav
+        width: 100%
+        overflow: hidden
+
+    .{$-cui-class-prefix}-tabs-tab
+        margin-right: 0
+        padding: 8px 0
+        text-align: center
+
+    .{$-cui-class-prefix}-tabs-tab-txt
+        max-width: 100%
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+

@@ -1,0 +1,60 @@
+@require '../css/base'
+
+.{$-cui-class-prefix}-searchbox
+    background: #fff
+    position: relative
+
+    &-wrap
+        position: relative
+        // border: 1px solid #eaeaea
+        display: flex
+
+    &.inputing
+        .{$-cui-class-prefix}-searchbox-delete,
+        .{$-cui-class-prefix}-searchbox-btn
+            display: block
+
+        .{$-cui-class-prefix}-searchbox-input
+            padding-right: 80px
+
+    &-i-search
+        absolute: top 13px left 10px
+        size: 16px
+        color: #999
+
+    &-input
+        color: #333
+        padding-left: 33px
+
+        &::-webkit-input-placeholder
+            color: #999
+
+        &::-webkit-search-cancel-button
+            display: none
+
+    &-delete
+        absolute: top 0 right 43px bottom 0
+        width: 30px
+        height: 40px
+        text-align: center
+        line-height: 40px !important
+        color: rgba(0, 0, 0, .5) !important
+        display: none
+
+        &:active
+            color: rgba(0, 0, 0, .6) !important
+
+    &-btn.default
+        size: 45px 40px
+        padding-right: 0
+        outline: none
+        display: none
+        background-color: #fff
+        border: 0
+        color: #999
+
+        &:active
+            background-color: #fff
+            border-color: #fff
+            border-left-color: #d1d9e4
+            color: $-cui-main-color
