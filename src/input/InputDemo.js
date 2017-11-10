@@ -19,8 +19,8 @@ export default class InputDemo extends Component {
     render() {
         return (
             <div>
-                <p><Input value={this.state.value} onKeyUp={e => this.handleKeyUp(e)} placeholder="请输入邮箱前缀"/></p>
-                <p><Input type="textarea" value={this.state.afterValue} disabled/></p>
+                <p><Input value={this.state.value} onKeyUp={e => this.handleKeyUp(e)} placeholder="请输入邮箱前缀" /></p>
+                <p><Input type="textarea" value={this.state.afterValue} disabled /></p>
             </div>
         );
     }

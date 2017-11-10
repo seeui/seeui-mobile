@@ -111,8 +111,8 @@ export default class ButtonDemo extends Component {
                     show={showDialog}
                     width="200px"
                     top="10px"
-                    hasClose={true}
-                    maskClickClose={true}
+                    hasClose
+                    maskClickClose
                     onHide={() => {
                         this.setState({showDialog: false});
                     }}

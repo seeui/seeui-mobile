@@ -16,9 +16,9 @@ const nib = require('nib');
 gulp.task('js', function () {
     return gulp.src('src/**/*.js')
         // 去除 js 中嵌入的 css
-        .pipe(removeLines({'filters': [
-            /import '[\S]+\.styl'/
-        ]}))
+        .pipe(removeLines({
+            filters: [/import '[\S]+\.styl'/]
+        }))
         .pipe(sourcemaps.init())
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('lib'));
@@ -28,11 +28,11 @@ gulp.task('stylus', function () {
     return gulp.src('src/**/*.styl')
         .pipe(stylus({
             'resolve url': true,
-            define: {
+            'define': {
                 url: require('stylus').resolver()
             },
-            use: nib(),
-            import: ['nib']
+            'use': nib(),
+            'import': ['nib']
             // compress: true
         }))
         .pipe(gulp.dest('lib'));

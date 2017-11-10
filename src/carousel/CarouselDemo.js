@@ -37,7 +37,7 @@ export default class CarouselDemo extends Component {
                         changeIndex={index => {
                             this.handleChangeIndex(index);
                         }}
-                        isCard={true}
+                        isCard
                         index={1}
                     >
                         <CarouselItem>

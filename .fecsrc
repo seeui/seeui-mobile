@@ -1,7 +1,15 @@
 {
     "eslint": {
         "rules": {
-            "no-unused-vars": ["error", { "varsIgnorePattern": "h" }]
+            "no-unused-vars": ["error", { "varsIgnorePattern": "h" }],
+            "react/prop-types": false,
+            "react/jsx-no-bind": false,
+            "react/forbid-component-props": false,
+            "react/no-danger": false,
+            "react/jsx-handler-names": false
+        },
+        "env": {
+            "react": true
         }
     }
 }

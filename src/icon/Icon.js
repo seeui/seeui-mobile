@@ -30,11 +30,11 @@ export default class Icon extends Component {
         });
 
         return (
-            <i style={style}
+            <i
+                style={style}
                 className={cls}
                 {...others}
-            >
-            </i>
+            />
         );
     }
 }

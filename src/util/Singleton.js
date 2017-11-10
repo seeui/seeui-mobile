@@ -23,7 +23,7 @@ export default class Singleton {
 
         const Component = this.component;
 
-        this.instance = render(<Component {...option}/>, this.dom);
+        this.instance = render(<Component {...option} />, this.dom);
         // this.instance.setState({
         //     show: true
         // });

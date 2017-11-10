@@ -35,6 +35,13 @@ export default class Dialog extends Component {
         this.propsUpdateShow = false;
     }
 
+    // 初始化完成，如果show，则触发onShow事件，初始化hide，不用触发onHide事件
+    componentDidMount() {
+        let {show, onShow} = this.props;
+
+        show && onShow && onShow();
+    }
+
     /**
      * 父级修改属性
      *
@@ -47,23 +54,6 @@ export default class Dialog extends Component {
         if (show === this.props.show) {
             this.propsUpdateShow = true;
         }
-    }
-
-    onMaskClick(e) {
-        const {prefixCls, maskClickClose, onHide} = this.props;
-        if (maskClickClose && hasClass(e.target, `${prefixCls}-dialog`)) {
-            onHide && onHide({type: 'maskClick'});
-        }
-        else {
-            e.stopPropagation();
-        }
-    }
-
-    // 初始化完成，如果show，则触发onShow事件，初始化hide，不用触发onHide事件
-    componentDidMount() {
-        let {show, onShow} = this.props;
-
-        show && onShow && onShow();
     }
 
     // 状态更新后，可能是props改变，也可能是state改变触发的
@@ -89,6 +79,16 @@ export default class Dialog extends Component {
     componentWillUnmount() {
         const {show, onDestroy} = this.props;
         show && onDestroy && onDestroy();
+    }
+
+    onMaskClick(e) {
+        const {prefixCls, maskClickClose, onHide} = this.props;
+        if (maskClickClose && hasClass(e.target, `${prefixCls}-dialog`)) {
+            onHide && onHide({type: 'maskClick'});
+        }
+        else {
+            e.stopPropagation();
+        }
     }
 
     /**
@@ -136,6 +136,7 @@ export default class Dialog extends Component {
         let btnsDom = buttons.map(button => {
             const {type = 'default', value, size = 'large', ...others} = button;
 
+            /* eslint-disable */
             return (
                 <div className={`${prefixCls}-dialog-footer-item`}>
                     <Button type={type} size={size} {...others}>
@@ -143,6 +144,7 @@ export default class Dialog extends Component {
                     </Button>
                 </div>
             );
+            /* eslint-enable */
         });
 
         return (

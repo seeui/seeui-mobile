@@ -37,7 +37,7 @@ export default class LoadMore extends Component {
             <div className={cls} {...others}>
                 {loading ? <Icon type="loading" /> : false}
                 <span className={`${prefixCls}-tips`}>
-                {children}
+                    {children}
                 </span>
             </div>
         );

@@ -154,7 +154,7 @@ export default class Uploader extends Component {
                 </div>
                 <div className={`${prefixCls}-uploader-body`}>
                     <ul className={`${prefixCls}-uploader-files`}>
-                         {this.renderFiles()}
+                        {this.renderFiles()}
                     </ul>
                     <div className={`${prefixCls}-uploader-box`}>
                         <input

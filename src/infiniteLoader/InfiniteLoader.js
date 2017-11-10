@@ -172,7 +172,7 @@ export default class InfiniteLoader extends Component {
         };
 
         return (
-             <div
+            <div
                 className={cls}
                 onTouchStart={e => this.touchHandler(e)}
                 onTouchMove={e => this.moveHandler(e)}

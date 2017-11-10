@@ -17,10 +17,6 @@ export default class Suggestion extends Component {
         isFullScreen: true
     };
 
-    componentWillReceiveProps(nextProps) {
-        this.isNeedLock = nextProps.show !== this.props.show;
-    }
-
     /**
      * 初始化完成
      *
@@ -29,6 +25,10 @@ export default class Suggestion extends Component {
     componentDidMount() {
         const {show, isFullScreen} = this.props;
         isFullScreen && show && lockWindow();
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.isNeedLock = nextProps.show !== this.props.show;
     }
 
     /**

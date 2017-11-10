@@ -55,7 +55,7 @@ export default class RateDemo extends Component {
                     禁用评分：
                     <Rate
                         num="2"
-                        disabled={true}
+                        disabled
                         onRateSelect={num => this.setState({rate1: num})}
                     />
                 </p>
