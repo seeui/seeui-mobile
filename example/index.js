@@ -36,11 +36,16 @@ import RateMd from '../src/rate/Rate.md';
 import StickyDemo from '../src/sticky/StickyDemo';
 import StickyMd from '../src/sticky/Sticky.md';
 
+import CheckboxDemo from '../src/checkbox/CheckboxDemo';
+import CheckboxMd from '../src/checkbox/Checkbox.md';
+
 import SearchBoxDemo from '../src/searchbox/SearchBoxDemo';
 import SearchBoxMd from '../src/searchbox/SearchBox.md';
 
 import UploaderDemo from '../src/uploader/UploaderDemo';
 import UploaderMd from '../src/uploader/Uploader.md';
+
+
 
 import './index.styl';
 import logo from './logo.png';
@@ -122,6 +127,11 @@ export default class Index extends Component {
                         <h2>Sticky 吸顶</h2>
                         <StickyDemo />
                         <MdContainer>{StickyMd}</MdContainer>
+                    </Panel>
+					<Panel>
+                        <h2>Checkbox 多选框</h2>
+                        <CheckboxDemo />
+                        <MdContainer>{CheckboxMd}</MdContainer>
                     </Panel>
 
                     <Panel>

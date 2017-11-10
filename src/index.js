@@ -21,6 +21,8 @@ import Rate from './rate/Rate';
 import SearchBox from './searchbox/SearchBox';
 import Uploader from './uploader/Uploader';
 import Sticky from './sticky/Sticky';
+import Checkbox from './checkbox/Checkbox';
+import CheckboxGroup from './checkbox/CheckboxGroup';
 
 // 工具函数
 import Singleton from './util/Singleton';
@@ -50,6 +52,8 @@ export {
     SearchBox,
     Uploader,
     Sticky,
+	Checkbox,
+	CheckboxGroup,
     // 工具函数
     Singleton,
     Gesture,

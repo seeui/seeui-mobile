@@ -1,0 +1,48 @@
+@require '../css/base';
+    .{$-cui-class-prefix}-checkbox-item
+        display: inline-block
+        padding: 5px
+        &.checked
+            & .{$-cui-class-prefix}-checkbox-item-icon
+                background: $-cui-main-color
+                color: white
+                text-align: center
+                &::before
+                    content: ''
+                    display: inline-block
+                    border: solid 2px white
+                    border-top: 0;
+                    border-left: 0;
+                    width: 5px
+                    height: 10px
+                    transform: rotate(45deg)
+        &.disabled
+            color: #aaa
+            & .{$-cui-class-prefix}-checkbox-item-icon
+                background: #f4f4f4
+                border-color: #f4f4f4
+                color: #aaaaaa
+        &-icon
+            display: inline-block
+            height: 18px
+            width: 18px
+            position: relative
+            border-radius: 3px
+            border: $-cui-main-color
+            color: white
+            vertical-align: middle
+            transition: background .2s
+            margin-right: 3px;
+            &-ipt
+                position: absolute
+                left: 0
+                top: 0
+                padding: 0px
+                margin: 0px
+                width: 18px
+                height: 18px
+                opacity: 0
+                filter: unquote('alpha(opacity = 0)')
+                z-index: -1
+        &-text
+            vertical-align: middle
