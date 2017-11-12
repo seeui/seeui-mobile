@@ -3,40 +3,56 @@
  * @author: v_jialipeng
  */
 
-import {h, Component} from 'preact';
+import {h} from 'preact';
 import classNames from 'classnames';
 
 import './Checkbox.styl';
-/*eslint-disable*/
-const Checkbox = ({checked, disabled, value, onChange = _ =>{}, prefixCls = 'cui', children, className, content, ...others}) => {
+
+export default ({
+    checked,
+    disabled,
+    value,
+    onChange = () => {},
+    prefixCls = 'cui',
+    children,
+    className,
+    ...others
+}) => {
     const cls = classNames({
-            [`${prefixCls}-checkbox-item`]: true,
-            checked: checked,
-            disabled: disabled,
-            [className]: className
-        });
-    const clkHandler = (e, event) => {
-        if (disabled) {return false};
+        [`${prefixCls}-checkbox-item`]: true,
+        checked: checked,
+        disabled: disabled,
+        [className]: className
+    });
+
+    const clkHandler = (e, evt) => {
+        if (disabled) {
+            return false;
+        }
         onChange(e);
-        event.preventDefault();
-        event.stopPropagation();
-    }
+        // 取消默认事件，防止触发真实的checkbox
+        evt.preventDefault();
+    };
+
     return (
-        <div className = {cls}>
-            <label className = {`${prefixCls}-checkbox-item-label`} onClick={ event => clkHandler({checked: !checked, value: value}, event) }>
+        <div className={cls}>
+            <label
+                className={`${prefixCls}-checkbox-item-label`}
+                onClick={
+                    evt => clkHandler({checked: !checked, value: value}, evt)
+                }
+            >
                 <span className={`${prefixCls}-checkbox-item-icon`}>
                     <input
-                    className = {`${prefixCls}-checkbox-item-icon-ipt`}
-                    type="checkbox"
-                    checked = {checked}
-                    {...others}
-                    value = {checked}/>
+                        className={`${prefixCls}-checkbox-item-icon-ipt`}
+                        type="checkbox"
+                        checked={checked}
+                        value={checked}
+                        {...others}
+                    />
                 </span>
                 <span className={`${prefixCls}-checkbox-item-text`}>{children}</span>
             </label>
-            {content}
         </div>
     );
 };
-
-export default Checkbox;

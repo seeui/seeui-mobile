@@ -4,6 +4,9 @@
  * @data 2017-06-27
  */
 
+// for react devtools
+import 'preact/devtools';
+
 // 组件
 import Button from './button/Button';
 import InfiniteLoader from './infiniteLoader/InfiniteLoader';
