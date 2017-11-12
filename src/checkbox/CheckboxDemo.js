@@ -47,28 +47,28 @@ export default class CheckboxDemo extends Component {
         return (
             <p>
                 <h3>Checkbox:</h3>
-                <Checkbox
-                    disabled={disabled}
-                    checked={checked}
-                    onChange={result => {
-                        this.setState({checked: result.checked});
-                    }}
-                    data-role="abcd"
-                >
-                    选项1 - {checked ? 'checked' : 'unchecked'} - {disabled ? 'disabled' : 'undisabled'}
-                </Checkbox>
                 <p>
-                    <Button type="primary" size="small" onClick={this.togChecked}>
+                    <Checkbox
+                        disabled={disabled}
+                        checked={checked}
+                        onChange={result => {
+                            this.setState({checked: result.checked});
+                        }}
+                        data-role="abcd"
+                    >
+                        选项1 - {checked ? 'checked' : 'unchecked'} - {disabled ? 'disabled' : 'undisabled'}
+                    </Checkbox>
+                </p>
+                <p>
+                    <Button size="small" onClick={this.togChecked}>
                         {checked ? 'checked' : 'unchecked'}
                     </Button>
                     <span>&nbsp;</span>
-                    <Button type="primary" size="small" onClick={this.togDisabled}>
+                    <Button size="small" onClick={this.togDisabled}>
                         {disabled ? 'disabled' : 'undisabled'}
                     </Button>
                 </p>
-                <p>
-                    -check状态: {`${checked}`}
-                </p>
+                <p>check状态: {`${checked}`}</p>
                 <h3>CheckboxGroup:</h3>
                 <p>
                     <CheckboxGroup
@@ -79,12 +79,12 @@ export default class CheckboxDemo extends Component {
                         onChange={vals => this.groupOnChange(vals)}
                     />
                 </p>
-                <Button type="primary" size="small" onClick={this.setGroupValue}>
-                    {all ? '清空' : '全选'}
-                </Button>
                 <p>
-                    -value值: {`${this.state.value}`}
+                    <Button size="small" onClick={this.setGroupValue}>
+                        {all ? '清空' : '全选'}
+                    </Button>
                 </p>
+                <p>value值: {`${this.state.value}`}</p>
                 <br />
             </p>
         );

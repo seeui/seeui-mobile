@@ -11,7 +11,7 @@ export default ({
     options,
     value = [],
     className,
-    prefixCls,
+    prefixCls = 'cui',
     onChange = () => {},
     ...others
 }) => {
@@ -29,9 +29,7 @@ export default ({
     return (
         <div className={cls}>
             {options.map(e => (typeof e === 'string' ? (
-                <Checkbox checked={justify(e)} {...others} onChange={itemChange}>
-                    {e}
-                </Checkbox>
+                <Checkbox checked={justify(e)} {...others} onChange={itemChange}>{e}</Checkbox>
             ) : (
                 <Checkbox
                     checked={justify(e.value)}
