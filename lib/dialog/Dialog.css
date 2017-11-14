@@ -6,6 +6,7 @@
   left: 0;
   background-color: rgba(0,0,0,0.6);
   display: none;
+  z-index: 40;
 }
 .cui-dialog.show {
   display: block;
@@ -21,6 +22,7 @@
   -ms-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
   padding: 10px;
+  z-index: 50;
 }
 .cui-dialog-wrap.vertical-middle {
   -webkit-transform: translate(-50%, -50%);
