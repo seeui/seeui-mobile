@@ -82,7 +82,7 @@ export default class Sticky extends Component {
         });
 
         return (
-            <div className={cls} ref={dom => this.stickyWrap = dom}>
+            <div className={cls} ref={dom => this.stickyWrap = dom} {...others}>
                 <div ref={dom => this.stickyElem = dom}>
                     {children}
                 </div>
