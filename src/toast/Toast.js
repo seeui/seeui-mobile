@@ -10,7 +10,7 @@ import Singleton from '../util/Singleton';
 
 import './Toast.styl';
 
-let timer;
+
 
 export default class Toast extends Component {
     static defaultProps = {
@@ -18,6 +18,11 @@ export default class Toast extends Component {
         show: false,
         delay: 3000
     };
+
+    constructor(props) {
+        super(props);
+        this.timer = null;
+    }
 
     componentDidMount() {
         this.setDelay();
@@ -32,8 +37,8 @@ export default class Toast extends Component {
     setDelay() {
         const {onHide, delay, onShow} = this.props;
         onShow && onShow();
-        clearTimeout(timer);
-        timer = setTimeout(() => {
+        clearTimeout(this.timer);
+        this.timer = setTimeout(() => {
             onHide && onHide();
         }, delay);
     }
