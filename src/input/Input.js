@@ -48,6 +48,7 @@ export default class Input extends Component {
                 return (
                     <input
                         className={cls}
+                        type={type}
                         {...others}
                     />
                 );
