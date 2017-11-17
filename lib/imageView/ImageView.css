@@ -32,6 +32,7 @@
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   -webkit-touch-callout: none;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.4);
 }
 .cui-imageview-delete {
   width: 46px;
@@ -47,6 +48,7 @@
   -ms-user-select: none;
   user-select: none;
   -webkit-touch-callout: none;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.4);
 }
 .cui-imageview-delete i {
   font-size: 20px;
