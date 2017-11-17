@@ -13,6 +13,7 @@ import Gesture from '../util/Gesture';
 import Singleton from '../util/Singleton';
 import transform from '../util/transform';
 import {setStyle} from '../util/dom';
+import {lockWindow, unLockWindow} from '../util/windowScrollHelper';
 
 import './ImageView.styl';
 
@@ -59,7 +60,13 @@ export default class ImageView extends Component {
         (current || current === 0) && this.changeIndex(current, false);
         this.bindStyle(current);
 
+        lockWindow();
+
         onInit && onInit();
+    }
+
+    componentWillUnmount() {
+        unLockWindow();
     }
 
     onSingleTap() {

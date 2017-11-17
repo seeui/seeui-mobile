@@ -79,21 +79,21 @@ export default class Uploader extends Component {
     }
 
     renderFiles() {
-        return this.props.files.map((file, idx) => {
+        const {files, prefixCls, onFileClick} = this.props;
+        let currFiles = files || [];
+
+        return currFiles.map((file, idx) => {
             let {url, error, status, onClick, ...others} = file;
             let fileStyle = {
                 backgroundImage: `url(${url})`
             };
-            const prefixCls = this.props.prefixCls;
             let cls = classNames({
                 [`${prefixCls}-uploader-file`]: true,
                 [`${prefixCls}-uploader-file-status`]: error || status
             });
 
             let handleFileClick = onClick ? onClick : e => {
-                if (this.props.onFileClick) {
-                    this.props.onFileClick(e, file, idx);
-                }
+                onFileClick && onFileClick(e, file, idx);
             };
 
             return (
@@ -111,23 +111,24 @@ export default class Uploader extends Component {
     }
 
     handleChange(e) {
-        const langs = this.props.lang;
+        const {lang, files, onError, maxCount, onChange} = this.props;
         let targetFiles = e.target.files;
+        let currFiles = files || [];
 
         if (targetFiles.length === 0) {
             return;
         }
 
-        if (this.props.files.length >= this.props.maxCount) {
-            this.props.onError(langs.maxError(this.props.maxCount));
+        if (currFiles.length >= maxCount) {
+            onError(lang.maxError(maxCount));
             return;
         }
 
         for (let key of Object.keys(targetFiles)) {
             let file = targetFiles[key];
             this.handleFile(file, (handledFile, evt) => {
-                if (this.props.onChange) {
-                    this.props.onChange(handledFile, evt);
+                if (onChange) {
+                    onChange(handledFile, evt);
                 }
                 findDOMNode(this.uploader).value = '';
             }, e);
@@ -137,6 +138,7 @@ export default class Uploader extends Component {
     render() {
         const {prefixCls, title, maxCount, files, onChange, className, ...others} = this.props;
         const inputProps = Object.assign({}, others);
+        let currFiles = files || [];
         delete inputProps.lang;
         delete inputProps.onError;
         delete inputProps.maxWidth;
@@ -150,22 +152,26 @@ export default class Uploader extends Component {
             <div className={cls}>
                 <div className={`${prefixCls}-uploader-header`}>
                     <div className={`${prefixCls}-uploader-title`}>{title}</div>
-                    <div className={`${prefixCls}-uploader-info`}>{files.length}/{maxCount}</div>
+                    <div className={`${prefixCls}-uploader-info`}>
+                        {currFiles.length}/{maxCount}
+                    </div>
                 </div>
                 <div className={`${prefixCls}-uploader-body`}>
                     <ul className={`${prefixCls}-uploader-files`}>
                         {this.renderFiles()}
                     </ul>
-                    <div className={`${prefixCls}-uploader-box`}>
-                        <input
-                            ref={dom => this.uploader = dom}
-                            className={`${prefixCls}-uploader-input`}
-                            type="file"
-                            accept="image/*"
-                            onChange={this.handleChange.bind(this)}
-                            {...inputProps}
-                        />
-                    </div>
+                    {currFiles.length < maxCount ? (
+                        <div className={`${prefixCls}-uploader-box`}>
+                            <input
+                                ref={dom => this.uploader = dom}
+                                className={`${prefixCls}-uploader-input`}
+                                type="file"
+                                accept="image/*"
+                                onChange={this.handleChange.bind(this)}
+                                {...inputProps}
+                            />
+                        </div>
+                    ) : null}
                 </div>
             </div>
         );

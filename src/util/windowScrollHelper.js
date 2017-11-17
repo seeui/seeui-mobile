@@ -66,7 +66,7 @@ function restoreWindowScrolling(ele) {
         setStyle(ele, 'height', size.height);
         setStyle(ele, 'overflow', size.overflow);
 
-        if (tagName === 'body') {
+        if (tagName === 'body' || tagName === 'html') {
             ele.scrollTop = size.scrollTop;
         }
 
