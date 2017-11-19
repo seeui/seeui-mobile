@@ -39,6 +39,9 @@ import StickyMd from '../src/sticky/Sticky.md';
 import CheckboxDemo from '../src/checkbox/CheckboxDemo';
 import CheckboxMd from '../src/checkbox/Checkbox.md';
 
+import RadioDemo from '../src/radio/RadioDemo';
+import RadioMd from '../src/radio/Radio.md';
+
 import SearchBoxDemo from '../src/searchbox/SearchBoxDemo';
 import SearchBoxMd from '../src/searchbox/SearchBox.md';
 
@@ -118,6 +121,11 @@ const Index = () => (
                 <h2>Sticky 吸顶</h2>
                 <StickyDemo />
                 <MdContainer>{StickyMd}</MdContainer>
+            </Panel>
+            <Panel>
+                <h2>Radio 单选框</h2>
+                <RadioDemo />
+                <MdContainer>{RadioMd}</MdContainer>
             </Panel>
             <Panel>
                 <h2>Checkbox 多选框</h2>

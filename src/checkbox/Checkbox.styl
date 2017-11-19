@@ -2,7 +2,7 @@
 
 .{$-cui-class-prefix}-checkbox-item
     display: inline-block
-    padding: 5px
+    padding-right: 5px
 
     &.checked
         & .{$-cui-class-prefix}-checkbox-item-icon
@@ -23,9 +23,9 @@
     &.disabled
         color: #aaa
         & .{$-cui-class-prefix}-checkbox-item-icon
-            background: #f4f4f4
-            border-color: #f4f4f4
-            color: #aaa
+            background: $-cui-disabled
+            border-color: $-cui-disabled
+            color: $-cui-disabled
 
     &-icon
         display: inline-block

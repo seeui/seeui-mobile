@@ -26,6 +26,8 @@ import Uploader from './uploader/Uploader';
 import Sticky from './sticky/Sticky';
 import Checkbox from './checkbox/Checkbox';
 import CheckboxGroup from './checkbox/CheckboxGroup';
+import Radio from './radio/Radio';
+import RadioGroup from './radio/RadioGroup';
 import Toast, {SingleToast} from './toast/Toast';
 
 // 工具函数
@@ -60,6 +62,8 @@ export {
     CheckboxGroup,
     Toast,
     SingleToast,
+    Radio,
+    RadioGroup,
 
     // 工具函数
     Singleton,

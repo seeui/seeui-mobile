@@ -1,0 +1,46 @@
+@require '../css/base'
+
+.{$-cui-class-prefix}-radio
+    display: inline-block
+    padding-right: 5px
+
+    &.checked
+        .{$-cui-class-prefix}-radio-icon
+            border: solid 1px $-cui-main-color
+            text-align: center
+            &::before
+                content: ''
+                display: inline-block
+                background-color: $-cui-main-color
+                size: 12px
+                vertical-align: middle
+                border-radius: 50%
+
+    &.disabled
+        color: #aaa
+        .{$-cui-class-prefix}-radio-icon
+            border-color: $-cui-disabled
+            &::before
+                background-color: $-cui-disabled
+
+    &-wrap
+        position: relative
+        display: inline-block
+        & > *
+            vertical-align: middle
+    &-icon
+        display: inline-block
+        size: 20px
+        border-radius: 50%
+        border: solid 1px #ccc
+        line-height: 20px
+        font-size: 0
+        margin-right: 3px
+
+    &-text
+        font-size: 14px
+
+    &-ipt
+        absolute top 0 left 0
+        opacity: 0
+        z-index: -1
