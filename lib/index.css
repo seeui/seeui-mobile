@@ -994,7 +994,7 @@
 }
 .cui-checkbox-item {
   display: inline-block;
-  padding: 5px;
+  padding-right: 5px;
 }
 .cui-checkbox-item.checked .cui-checkbox-item-icon {
   background: #38f;
@@ -1020,9 +1020,9 @@
   color: #aaa;
 }
 .cui-checkbox-item.disabled .cui-checkbox-item-icon {
-  background: #f4f4f4;
-  border-color: #f4f4f4;
-  color: #aaa;
+  background: #eee;
+  border-color: #eee;
+  color: #eee;
 }
 .cui-checkbox-item-icon {
   display: inline-block;

@@ -1,0 +1,55 @@
+.cui-radio {
+  display: inline-block;
+  padding-right: 5px;
+}
+.cui-radio.checked .cui-radio-icon {
+  border: solid 1px #38f;
+  text-align: center;
+}
+.cui-radio.checked .cui-radio-icon::before {
+  content: '';
+  display: inline-block;
+  background-color: #38f;
+  width: 12px;
+  height: 12px;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+.cui-radio.disabled {
+  color: #aaa;
+}
+.cui-radio.disabled .cui-radio-icon {
+  border-color: #eee;
+}
+.cui-radio.disabled .cui-radio-icon::before {
+  background-color: #eee;
+}
+.cui-radio-wrap {
+  position: relative;
+  display: inline-block;
+}
+.cui-radio-wrap > * {
+  vertical-align: middle;
+}
+.cui-radio-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: solid 1px #ccc;
+  line-height: 20px;
+  font-size: 0;
+  margin-right: 3px;
+}
+.cui-radio-text {
+  font-size: 14px;
+}
+.cui-radio-ipt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  z-index: -1;
+}
