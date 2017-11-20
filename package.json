@@ -7,7 +7,7 @@
     "lint": "fecs src --type=js --reporter=baidu || true",
     "build": "rimraf lib && NODE_ENV=production gulp build",
     "start": "npm run lint && webpack-dev-server --config ./tool/webpack.dev.babel.js --devtool eval --progress --inline --colors --hot --content-base dist",
-    "publish": "npm run build && npm publish"
+    "p": "npm run build && npm publish"
   },
   "repository": {
     "type": "git",
