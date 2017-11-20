@@ -14,6 +14,8 @@ import InfiniteLoaderMd from '../src/infiniteLoader/InfiniteLoader.md';
 
 import DialogDemo from '../src/dialog/DialogDemo';
 import DialogMd from '../src/dialog/Dialog.md';
+import AlertMd from '../src/dialog/Alert.md';
+import ConfirmMd from '../src/dialog/Confirm.md';
 
 import IconDemo from '../src/icon/IconDemo';
 import IconMd from '../src/icon/Icon.md';
@@ -85,6 +87,8 @@ const Index = () => (
                 <h2>Dialog 浮层</h2>
                 <DialogDemo />
                 <MdContainer>{DialogMd}</MdContainer>
+                <MdContainer>{AlertMd}</MdContainer>
+                <MdContainer>{ConfirmMd}</MdContainer>
             </Panel>
             <Panel>
                 <h2>Icon图标</h2>
