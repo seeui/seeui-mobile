@@ -81,7 +81,12 @@ export default class RadioDemo extends Component {
                 </div>
                 <h3>RadioGroup:</h3>
                 <div style={space}>
-                    <RadioGroup name={'abc'} options={optionsWithDisabled} value={value} onChange={val => this.toggleGroup(val)} />
+                    <RadioGroup
+                        name={'abc'}
+                        options={optionsWithDisabled}
+                        value={value}
+                        onChange={val => this.toggleGroup(val)}
+                    />
                 </div>
                 <p>value: {value}</p>
             </div>

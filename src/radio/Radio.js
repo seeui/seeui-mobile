@@ -28,7 +28,7 @@ export default ({
     const clkHandler = (e, evt) => {
         if (disabled) {
             return false;
-        };
+        }
         evt.preventDefault(); // 取消默认事件
         e.checked !== checked ? onChange(e) : null;
     };

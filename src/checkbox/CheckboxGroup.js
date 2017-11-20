@@ -8,7 +8,7 @@ import classNames from 'classnames';
 import Checkbox from './Checkbox';
 
 export default ({
-    options =[],
+    options = [],
     value = [],
     className,
     prefixCls = 'cui',
