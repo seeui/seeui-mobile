@@ -67,7 +67,9 @@ export default class Uploader extends Component {
     }
 
     handleFile(file, cb) {
-        const {onError, maxSize, minSize} = this.props;
+        const {onError, maxSize, minSize, onStart} = this.props;
+
+        onStart && onStart(file);
 
         // 格式校验
         if (!/image/.test(file.type)) {
