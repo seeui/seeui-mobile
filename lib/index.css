@@ -943,6 +943,10 @@
   color: #f43530;
   font-size: 24px;
 }
+.cui-uploader-file-content .cui-i-loading {
+  color: #fff;
+  font-size: 24px;
+}
 .cui-uploader-box {
   float: left;
   position: relative;
