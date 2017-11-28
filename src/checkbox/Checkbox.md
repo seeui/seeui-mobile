@@ -3,7 +3,7 @@
 属性 | 说明 | 类型 | 默认值
 -----|-----|-----|------
 checked | 设置是否选中 | boolean | `false`
-onChange | 变化时回调函数 | Function({checked: boolean', value: string}) | -
+onChange | 变化时回调函数 | Function({checked: boolean, value: string}) | -
 
 # CheckboxGroup Api
 

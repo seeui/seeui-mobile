@@ -17,6 +17,8 @@ export default class Uploader extends Component {
         prefixCls: 'cui',
         title: '图片上传',
         maxCount: 9,
+        maxSize: 5 * 1024 * 1024,
+        minSize: 0,
         maxWidth: 500,
         files: [],
         onChange: undefined,
@@ -24,11 +26,64 @@ export default class Uploader extends Component {
         lang: {
             maxError(maxCount) {
                 return `最多只能上传${maxCount}张图片`;
+            },
+            typeError: '上传文件的格式必须为图片',
+            sizeError(min, max) {
+                if (min && max) {
+                    return `图片大小需大于${min}，小于${max}`;
+                }
+                if (min) {
+                    return `图片大小需不能低于${min}`;
+                }
+                if (max) {
+                    return `图片大小需不能超过${max}`;
+                }
+                return '图片大小有误';
             }
         }
     };
 
+    constructor(props) {
+        super(props);
+        this.lang = {
+            ...Uploader.defaultProps.lang,
+            ...this.props.lang
+        };
+    }
+
+    sizeConvert(size) {
+        if (!size) {
+            return null;
+        }
+
+        if (size < 1024) {
+            return size + 'B';
+        }
+        else if (size < 1024 * 1024) {
+            return parseInt(size / 1024, 10) + 'KB';
+        }
+
+        return parseInt(size / 1024 / 1024, 10) + 'MB';
+    }
+
     handleFile(file, cb) {
+        const {onError, maxSize, minSize} = this.props;
+
+        // 格式校验
+        if (!/image/.test(file.type)) {
+            onError(this.lang.typeError);
+            return;
+        }
+
+        // 大小校验
+        if (maxSize && file.size > maxSize || minSize && file.size < minSize) {
+            onError(this.lang.sizeError(
+                this.sizeConvert(minSize),
+                this.sizeConvert(maxSize)
+            ));
+            return;
+        }
+
         let reader = new FileReader();
 
         reader.onload = e => {
@@ -43,7 +98,9 @@ export default class Uploader extends Component {
                 // patch subsampling bug
                 // http://jsfiddle.net/gWY2a/24/
                 let drawImage = ctx.drawImage;
+                /* eslint-disable */
                 ctx.drawImage = (drawImg, sx, sy, sw, sh, dx, dy, dw, dh) => {
+                /* eslint-enable */
                     // Execute several cases (Firefox does not handle undefined as no param)
                     // by call (apply is bad performance)
                     if (arguments.length === 9) {
@@ -83,29 +140,38 @@ export default class Uploader extends Component {
         let currFiles = files || [];
 
         return currFiles.map((file, idx) => {
-            let {url, error, status, onClick, ...others} = file;
+            let {url, error, status, onClick, loading, ...others} = file;
             let fileStyle = {
                 backgroundImage: `url(${url})`
             };
             let cls = classNames({
                 [`${prefixCls}-uploader-file`]: true,
-                [`${prefixCls}-uploader-file-status`]: error || status
+                [`${prefixCls}-uploader-file-status`]: error || status || loading
             });
 
             let handleFileClick = onClick ? onClick : e => {
                 onFileClick && onFileClick(e, file, idx);
             };
 
+            let content;
+            if (error) {
+                content = <Icon type="warn-fill" />;
+            }
+            else if (loading) {
+                content = <Icon type="loading" />;
+            }
+            else if (status) {
+                content = status;
+            }
+
             return (
+                /* eslint-disable */
                 <li className={cls} key={idx} style={fileStyle} onClick={handleFileClick} {...others}>
-                    {
-                        error || status ? (
-                            <div className={`${prefixCls}-uploader-file-content`}>
-                                { error ? <Icon type="warn-fill" /> : status }
-                            </div>
-                        ) : false
-                    }
+                    <div className={`${prefixCls}-uploader-file-content`}>
+                        {content}
+                    </div>
                 </li>
+                /* eslint-enable */
             );
         });
     }
@@ -120,7 +186,7 @@ export default class Uploader extends Component {
         }
 
         if (currFiles.length >= maxCount) {
-            onError(lang.maxError(maxCount));
+            onError(this.lang.maxError(maxCount));
             return;
         }
 
@@ -130,7 +196,9 @@ export default class Uploader extends Component {
                 if (onChange) {
                     onChange(handledFile, evt);
                 }
+                /* eslint-disable */
                 findDOMNode(this.uploader).value = '';
+                /* eslint-enable */
             }, e);
         }
     }
