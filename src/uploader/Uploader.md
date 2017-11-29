@@ -15,7 +15,7 @@ maxCount | 最大上传数量 | number | 9
 maxSize | 最大容量 | number | 5 \* 1024 \* 1024
 minSize | 最小容量 | number | 0
 maxWidth | 最大展示宽度 | number | 500
-onStart | 点击上传按钮处理函数 | Function(file: File) | -
+onStart | 点击上传按钮处理函数 | Function(file: File, stop: Function) | -
 onChange | 上传处理函数 | Function(file: File) | -
 onError | 失败处理函数 | Function(msg: string) | -
 className | 额外类名 | string | -

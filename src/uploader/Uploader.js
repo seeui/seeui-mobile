@@ -49,6 +49,7 @@ export default class Uploader extends Component {
             ...Uploader.defaultProps.lang,
             ...this.props.lang
         };
+        this.isStop = false;
     }
 
     sizeConvert(size) {
@@ -66,10 +67,20 @@ export default class Uploader extends Component {
         return parseInt(size / 1024 / 1024, 10) + 'MB';
     }
 
+    stop() {
+        this.isStop = true;
+    }
+
     handleFile(file, cb) {
         const {onError, maxSize, minSize, onStart} = this.props;
 
-        onStart && onStart(file);
+        // 触发用户传入的 onstart 事件
+        // 如果用户调用 第二个参数stop，则可以实现停止上传，方便用户加一些独有的判断条件
+        this.isStop = false;
+        onStart && onStart(file, this.stop.bind(this));
+        if (this.isStop) {
+            return;
+        }
 
         // 格式校验
         if (!/image/.test(file.type)) {
@@ -179,7 +190,7 @@ export default class Uploader extends Component {
     }
 
     handleChange(e) {
-        const {lang, files, onError, maxCount, onChange} = this.props;
+        const {files, onError, maxCount, onChange} = this.props;
         let targetFiles = e.target.files;
         let currFiles = files || [];
 
