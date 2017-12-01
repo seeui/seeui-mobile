@@ -1,0 +1,60 @@
+@require '../css/base'
+
+.{$-cui-class-prefix}-switch
+    display: inline-block
+    padding-right: 5px
+
+    &.checked
+        .{$-cui-class-prefix}-switch-icon
+            border: solid 1px $-cui-main-color
+            background-color: #38f
+            &::before
+                transform: translateX(21px)
+                background-color: #fff
+
+    &.disabled
+        color: #aaa
+        &.checked
+            .{$-cui-class-prefix}-switch-icon
+                background-color: #7c93b9
+                border-color: #7c93b9
+                &::before
+                    background-color: #eee
+        .{$-cui-class-prefix}-switch-icon
+            border-color: $-cui-disabled
+            background-color: $-cui-disabled
+            &::before
+                background-color: #f9f9f9
+
+    &-wrap
+        position: relative
+        display: inline-block
+        & > *
+            vertical-align: middle
+    &-icon
+        display: inline-block
+        size: 40px 20px
+        border-radius: 12px
+        border: solid 1px #ccc
+        line-height: 20px
+        font-size: 0
+        margin-right: 3px
+        transition: background .1s;
+        &::before
+            content: '';
+            display: inline-block;
+            background-color: #ddd;
+            width: 18px;
+            height: 18px;
+            vertical-align: middle;
+            border-radius: 50%;
+            transform: translateX(1px);
+            transition: transform .1s background .1s;
+
+    &-text
+        font-size: 14px
+
+    &-ipt
+        absolute top 0 left 0
+        opacity: 0
+        z-index: -1

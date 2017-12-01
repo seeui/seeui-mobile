@@ -28,6 +28,7 @@ import Checkbox from './checkbox/Checkbox';
 import CheckboxGroup from './checkbox/CheckboxGroup';
 import Radio from './radio/Radio';
 import RadioGroup from './radio/RadioGroup';
+import Switch from './switch/Switch';
 import Toast, {SingleToast} from './toast/Toast';
 
 // 工具函数
@@ -64,6 +65,7 @@ export {
     SingleToast,
     Radio,
     RadioGroup,
+    Switch,
 
     // 工具函数
     Singleton,

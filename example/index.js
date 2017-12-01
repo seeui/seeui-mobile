@@ -53,6 +53,9 @@ import UploaderMd from '../src/uploader/Uploader.md';
 import ToastDemo from '../src/toast/ToastDemo';
 import ToastMd from '../src/toast/Toast.md';
 
+import SwitchDemo from '../src/switch/SwitchDemo';
+import SwitchMd from '../src/switch/Switch.md';
+
 import './index.styl';
 import logo from './logo.png';
 
@@ -127,6 +130,11 @@ const Index = () => (
                 <MdContainer>{StickyMd}</MdContainer>
             </Panel>
             <Panel>
+                <h2>Switch 开关</h2>
+                <SwitchDemo />
+                <MdContainer>{SwitchMd}</MdContainer>
+            </Panel>
+            <Panel>
                 <h2>Radio 单选框</h2>
                 <RadioDemo />
                 <MdContainer>{RadioMd}</MdContainer>
@@ -136,7 +144,6 @@ const Index = () => (
                 <CheckboxDemo />
                 <MdContainer>{CheckboxMd}</MdContainer>
             </Panel>
-
             <Panel>
                 <h2>Uploader 上传</h2>
                 <UploaderDemo />
