@@ -40,10 +40,6 @@ export default class ImageViewDemo extends Component {
             {
                 thumb: 'http://i2.kiimg.com/1949/984ee020934108b7t.jpg',
                 raw: 'http://i2.kiimg.com/1949/984ee020934108b7s.jpg'
-            },
-            {
-                thumb: 'http://i4.bvimg.com/619296/fcc7e782a7d37a7dt.jpg',
-                raw: 'http://i4.bvimg.com/619296/fcc7e782a7d37a7ds.png'
             }
         ];
 
