@@ -1,0 +1,86 @@
+.cui-switch {
+  display: inline-block;
+  padding-right: 5px;
+}
+.cui-switch.checked .cui-switch-icon {
+  border: solid 1px #38f;
+  background-color: #38f;
+}
+.cui-switch.checked .cui-switch-icon::before {
+  -webkit-transform: translateX(21px);
+  -moz-transform: translateX(21px);
+  -o-transform: translateX(21px);
+  -ms-transform: translateX(21px);
+  transform: translateX(21px);
+  background-color: #fff;
+}
+.cui-switch.disabled {
+  color: #aaa;
+}
+.cui-switch.disabled.checked .cui-switch-icon {
+  background-color: #aaa;
+  border-color: #aaa;
+}
+.cui-switch.disabled.checked .cui-switch-icon::before {
+  background-color: #eee;
+}
+.cui-switch.disabled .cui-switch-icon {
+  border-color: #eee;
+  background-color: #eee;
+}
+.cui-switch.disabled .cui-switch-icon::before {
+  background-color: #f9f9f9;
+}
+.cui-switch-wrap {
+  position: relative;
+  display: inline-block;
+}
+.cui-switch-wrap > * {
+  vertical-align: middle;
+}
+.cui-switch-icon {
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  border-radius: 12px;
+  border: solid 1px #ccc;
+  line-height: 20px;
+  font-size: 0;
+  margin-right: 3px;
+  -webkit-transition: background 0.1s;
+  -moz-transition: background 0.1s;
+  -o-transition: background 0.1s;
+  -ms-transition: background 0.1s;
+  transition: background 0.1s;
+}
+.cui-switch-icon::before {
+  content: '';
+  display: inline-block;
+  background-color: #ddd;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  border-radius: 50%;
+  -webkit-transform: translateX(1px);
+  -moz-transform: translateX(1px);
+  -o-transform: translateX(1px);
+  -ms-transform: translateX(1px);
+  transform: translateX(1px);
+  -webkit-transition: -webkit-transform 0.1s background 0.1s;
+  -moz-transition: -moz-transform 0.1s background 0.1s;
+  -o-transition: -o-transform 0.1s background 0.1s;
+  -ms-transition: -ms-transform 0.1s background 0.1s;
+  transition: transform 0.1s background 0.1s;
+}
+.cui-switch-text {
+  font-size: 14px;
+}
+.cui-switch-ipt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  z-index: -1;
+}
