@@ -7,6 +7,18 @@
 import {setStyle, getStyle, children} from './dom';
 
 let originalHTMLBodySize = {};
+let setStyleList = [];
+
+/**
+ * 增加锁屏样式
+ */
+function setAllStyles() {
+    setStyleList.forEach(ele => {
+        setStyle(ele, 'width', '100%');
+        setStyle(ele, 'height', '100%');
+        setStyle(ele, 'overflow', 'hidden');
+    });
+}
 
 /**
  * 阻止对应dom元素的scroll样式
@@ -22,7 +34,6 @@ function stopWindowScrolling(ele) {
 
     // 可能存在多个组件的现实与隐藏触发锁屏和解锁，所以累加在一起
     ele.setAttribute('data-lock', lockNum + 1);
-
     if (lockNum === 0) {
         originalHTMLBodySize[tagName] = {
             width: getStyle(ele, 'width'),
@@ -30,11 +41,11 @@ function stopWindowScrolling(ele) {
             overflow: getStyle(ele, 'overflow'),
             scrollTop: ele.scrollTop
         };
-        setStyle(ele, 'width', '100%');
-        setStyle(ele, 'height', '100%');
-        setStyle(ele, 'overflow', 'hidden');
 
-        if (tagName === 'body') {
+        // 这里先记录，之后一起增加样式，是因为样式的变动会影响到scrollTop
+        setStyleList.push(ele);
+
+        if (tagName === 'body' || tagName === 'html') {
             ele.scrollTop = 0;
         }
     }
@@ -65,7 +76,6 @@ function restoreWindowScrolling(ele) {
         setStyle(ele, 'width', size.width);
         setStyle(ele, 'height', size.height);
         setStyle(ele, 'overflow', size.overflow);
-
         if (tagName === 'body' || tagName === 'html') {
             ele.scrollTop = size.scrollTop;
         }
@@ -113,7 +123,6 @@ function restoreWrapperPostion(wrapper) {
  */
 export function lockWindow(wrapper) {
     wrapper = wrapper || children(document.body)[0];
-
     stopWindowScrolling(wrapper);
 
     let element = wrapper;
@@ -122,6 +131,7 @@ export function lockWindow(wrapper) {
         stopWindowScrolling(element);
     }
 
+    setAllStyles();
     setWrapperPostion(wrapper);
 }
 
