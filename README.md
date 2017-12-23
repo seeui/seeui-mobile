@@ -3,3 +3,5 @@
 
 [![NPM version](http://img.shields.io/npm/v/seeui-mobile.svg?style=flat-square)](https://npmjs.org/package/seeui-mobile)
 [![License](https://img.shields.io/github/license/seeui/seeui-mobile.svg?style=flat-square)](https://npmjs.org/package/seeui-mobile)
+
+使用方式：<https://github.com/seeui/seeui-webpack-demo>
